@@ -71,7 +71,7 @@ class Rectangle:
         return a string repreentaion of the rectangle
         """
         if self.__width == 0 or self.width == 0:
-            return ''
+            return 0
         rectangle = ''
         for i in range(self.__height):
             rectangle += "#" * self.__width + "\n"
