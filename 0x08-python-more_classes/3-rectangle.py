@@ -66,7 +66,7 @@ class Rectangle:
 
         return (self.__height * 2) + (self.__width * 2)
 
-    def __str__(self) -> str:
+    def __str__(self):
         """
         return a string repreentaion of the rectangle
         """
