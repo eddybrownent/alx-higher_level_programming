@@ -70,7 +70,7 @@ class Rectangle:
         """
         return a string repreentaion of the rectangle
         """
-        if self.__width == 0 or self.__width == 0:
+        if self.__width == 0 or self.__height == 0:
             return ""
         rectangle = ''
         for i in range(self.__height):
