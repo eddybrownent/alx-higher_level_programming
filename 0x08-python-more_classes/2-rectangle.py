@@ -51,6 +51,7 @@ class Rectangle:
             raise ValueError('height must be >= 0')
         self.__height = value
 
+
     def area(self):
         """
         to get the area of the rectangle
@@ -62,6 +63,6 @@ class Rectangle:
         To get the perimeter of the rectangle
         """
         if self.__width == 0 or self.__height == 0:
-            perimeter = 0
+            return 0
 
         return (self.__height * 2) + (self.__width * 2)
