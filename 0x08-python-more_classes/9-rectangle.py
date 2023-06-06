@@ -75,16 +75,11 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        rectangle = ""
-        for column in range(self.__height):
-            for row in range(self.__width):
-                try:
-                    rectangle += str(self.print_symbol)
-                except Exception:
-                    rectangle += type(self).print_symbol
-            if column < self.__height - 1:
-                rectangle += "\n"
-        return rectangle
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        return "\n".join(
+            str(self.print_symbol) * self.__width for _ in range(self.__height)
+        )
 
     def __repr__(self):
         """
@@ -129,4 +124,7 @@ class Rectangle:
         to return a new Rectangle instance with equal
         width and height
         """
+        if type(size) is not int:
+            raise TypeError('size must be an integer')
+
         return Rectangle(size, size)
