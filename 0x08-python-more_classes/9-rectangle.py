@@ -75,8 +75,6 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        if self.__width == 0 or self.__height == 0:
-            return ""
         return "\n".join(
             str(self.print_symbol) * self.__width for _ in range(self.__height)
         )
@@ -124,4 +122,4 @@ class Rectangle:
         to return a new Rectangle instance with equal
         width and height
         """
-        return cls(size, size)
+        return cls(width=size, height=size)
