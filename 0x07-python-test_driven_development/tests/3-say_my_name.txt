@@ -1,0 +1,39 @@
+How to use and test 3-say_my_name.py
+
+Impoting:
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Testing without arguments:
+
+>>> say_my_name()
+Traceback (most recent call last):
+  	...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Testing with two strings:
+
+>>> say_my_name("eddy", "brown")
+My name is eddy brown
+
+
+Testing with one int and other string:
+
+>>> say_my_name(1, "brown")
+Traceback (most recent call last):
+ 	...
+    raise TypeError("first_name must be a string or last_name must be a string")
+TypeError: first_name must be a string or last_name must be a string
+
+Testing with one string:
+
+>>> say_my_name("eddy")
+My name is eddy
+
+Testing with list:
+
+>>> say_my_name("eddy", ["brave", "hardworking", "caring"])
+Traceback (most recent call last):
+	...
+    raise TypeError("first_name must be a string or last_name must be a string")
+TypeError: first_name must be a string or last_name must be a string
