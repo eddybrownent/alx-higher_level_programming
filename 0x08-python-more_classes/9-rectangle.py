@@ -66,8 +66,7 @@ class Rectangle:
         To get the perimeter of the rectangle
         """
         if self.__width == 0 or self.__height == 0:
-            perimeter = 0
-
+            return 0
         return (self.__height * 2) + (self.__width * 2)
 
     def __str__(self):
@@ -87,7 +86,7 @@ class Rectangle:
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
-        """"
+        """
         prints this message when a rectangle instance is deleted
         """
         Rectangle.number_of_instances -= 1
