@@ -123,4 +123,4 @@ class Rectangle:
         to return a new Rectangle instance with equal
         width and height
         """
-        return cls(size, size)
+        return Rectangle(size, size)
