@@ -12,7 +12,7 @@ def text_indentation(text):
     after each of punctuation marks
 
     Args:
-        text: the text to be worked on
+        text(str): the text to be worked on
 
     Raises:
         TypeError: if the text is not string
@@ -25,6 +25,9 @@ def text_indentation(text):
     current_line = ""
 
     for char in text:
+        if char == ' ' and not current_line:
+            continue
+
         current_line += char
         if char in punctuation_marks:
             lines.append(current_line.strip())
