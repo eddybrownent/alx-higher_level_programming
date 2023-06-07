@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Unittest for max_integer([..])
-"""
+i"""
+
+
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
@@ -37,7 +39,6 @@ class TestMaxInteger(unittest.TestCase):
     def test_one_element(self):
         one_number = [7]
         self.assertEqual(max_integer(one_number), 7)
-
     
 if __name__ == '__main__':
     unittest.main()
