@@ -17,26 +17,23 @@ def text_indentation(text):
     Raises:
         TypeError: if the text is not string
     """
+
     if type(text) is not str:
         raise TypeError("text must be a string")
 
     punctuation_marks = ['.', '?', ':']
     lines = []
     current_line = ""
-    leading_whitespace = True
 
     for char in text:
-        if char == ' ' and leading_whitespace:
-            continue
-
         current_line += char
         if char in punctuation_marks:
             lines.append(current_line.strip())
             lines.append('\n' * 2)
             current_line = ''
 
-    if current_line.strip() or leading_whitespace:
+    if current_line:
         lines.append(current_line.strip())
 
-    new_text = "".join(lines)
-    print(new_text)
+        new_text = "".join(lines)
+        print(new_text, end="")
