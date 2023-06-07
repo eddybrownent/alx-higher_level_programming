@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module has one function 
+This module has one function
 adding two integers
 and returns the result
 """
@@ -10,7 +10,7 @@ def add_integer(a, b=98):
     """
     Returns the sums of two integers or floats
     and returns as integers
-    
+
     Args:
         a: First argument
         b: the second argument
