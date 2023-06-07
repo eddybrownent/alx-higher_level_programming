@@ -23,9 +23,10 @@ def text_indentation(text):
     punctuation_marks = ['.', '?', ':']
     lines = []
     current_line = ""
+    leading_whitespace = True
 
     for char in text:
-        if char == ' ' and not current_line:
+        if char == ' ' and leading_whitespace:
             continue
 
         current_line += char
@@ -34,7 +35,7 @@ def text_indentation(text):
             lines.append('\n' * 2)
             current_line = ''
 
-    if current_line:
+    if current_line.strip() or leading_whitespace:
         lines.append(current_line.strip())
 
     new_text = "".join(lines)
