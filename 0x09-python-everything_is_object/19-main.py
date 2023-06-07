@@ -8,11 +8,5 @@ new_list = copy_list(my_list)
 
 print(my_list)
 print(new_list)
-
-another_list = [1]
-yangu_list = copy_list(another_list)
-
-print(yangu_list)
-
 print(new_list == my_list)
 print(new_list is my_list)
