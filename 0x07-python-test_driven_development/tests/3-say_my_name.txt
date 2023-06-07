@@ -28,7 +28,7 @@ TypeError: first_name must be a string
 Testing with one string:
 
 >>> say_my_name("eddy")
-My name is eddy
+My name is eddy 
 
 Testing with list:
 
