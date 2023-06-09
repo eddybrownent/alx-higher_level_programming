@@ -25,11 +25,11 @@ void print_python_string(PyObject *p)
 
 	/* Check the string type and print information accordingly */
 	if (PyUnicode_IS_COMPACT_ASCII(p))
-		printf(" type: compact ascii\n");
+		printf("  type: compact ascii\n");
 	else
-		printf(" type: compact unicode object\n");
+		printf("  type: compact unicode object\n");
 
 	/* Print the length and value of the string */
-	printf(" length: %ld\n", length);
-	printf(" value: %ls\n", PyUnicode_AsWideCharString(p, &length));
+	printf("  length: %ld\n", length);
+	printf("  value: %ls\n", PyUnicode_AsWideCharString(p, &length));
 }
