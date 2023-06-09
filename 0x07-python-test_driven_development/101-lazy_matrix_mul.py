@@ -18,5 +18,5 @@ def lazy_matrix_mul(m_a, m_b):
         List: the result matrix list of lists
     """
     result = (np.matmul(m_a, m_b))
-
+    
     return result
