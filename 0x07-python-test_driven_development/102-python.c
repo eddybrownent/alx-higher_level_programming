@@ -31,5 +31,5 @@ void print_python_string(PyObject *p)
 
 	/* Print the length and value of the string */
 	printf(" length: %ld\n", length);
-	printf(" value: %sls\n", PyUnicode_AsWideCharString(p, &length));
+	printf(" value: %ls\n", PyUnicode_AsWideCharString(p, &length));
 }
