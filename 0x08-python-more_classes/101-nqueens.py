@@ -9,7 +9,7 @@ def is_safe(board, row, col, N):
         if board[i] == col or \
                 board[i] - col == i - row or \
                 board[i] - col == row - i:
-                    return False
+            return False
     return True
 
 
@@ -43,7 +43,7 @@ def print_solutions(N):
 if __name__ == '__main__':
     # Check if the program was called with the correct number of arguments
     if len(sys.argv) != 2:
-        print("Usage:nqueens N")
+        print("Usage: nqueens N")
         sys.exit(1)
 
     try:
