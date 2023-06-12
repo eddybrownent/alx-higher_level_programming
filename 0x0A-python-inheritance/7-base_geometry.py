@@ -6,6 +6,7 @@ this module defines a class BaseGeometry
 
 class BaseGeometry:
     """
+    class representing base geometry
     """
     def area(self):
         """
