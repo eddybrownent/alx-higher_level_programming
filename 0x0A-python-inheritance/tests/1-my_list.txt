@@ -1,0 +1,81 @@
+Test for the module 1-my_list.py
+
+Importing:
+>>> MyList = __import__('1-my_list').MyList
+
+Test Case 1:
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
+
+
+Test Case 2:
+>>> my_list = MyList()
+>>> my_list.append(2)
+>>> my_list.append(4)
+>>> my_list.append(6)
+>>> print(my_list)
+[2, 4, 6]
+>>> 
+
+
+Test Case 3:
+>>> my_list = MyList()
+>>> my_list.append(8)
+>>> my_list.append(5)
+>>> my_list.append(3)
+>>> my_list.append(19)
+>>> my_list.print_sorted()
+[3, 5, 8, 19]
+>>> 
+
+
+Test Case 4:
+>>> MyList = __import__('1-my_list').MyList
+>>> listyangu.print_sorted()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'listyangu' is not defined
+>>> 
+
+
+Test Case 5:
+>>> MyList = __import__('1-my_list').MyList
+>>> A = [9, 10, 5, 2, 11]
+>>> my_list = MyList(A)
+>>> my_list.print_sorted()
+[2, 5, 9, 10, 11]
+>>> 
+
+
+Test Case 6:
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(-6)
+>>> my_list.append(-2)
+>>> my_list.append(1)
+>>> my_list.append(-8)
+>>> my_list.append(6)
+>>> my_list.print_sorted()
+[-8, -6, -2, 1, 6]
+>>> 
+
+Test Case 7:
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = [2, 1, 4, 7, 3]
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'print_sorted'
+>>> 
+
+
+Test Case 8:
+>>> my_list = MyList()
+>>> my_list.append(7)
+>>> my_list.print_sorted()
+[7]
+>>> print(my_list)
+[7]
