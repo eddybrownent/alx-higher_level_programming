@@ -1,0 +1,142 @@
+Test for the module 7-basse_geometry.py:
+
+Importing:
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> 
+
+
+Test Case 1:
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> baseG = BaseGeometry()
+>>> baseG.area()
+Traceback (most recent call last):
+	...
+    raise Exception("area() is not implemented")
+Exception: area() is not implemented
+>>> 
+
+
+Test Case 2:
+>>> baseG = BaseGeometry()
+>>> baseG.integer_validator()
+Traceback (most recent call last):
+	...
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> 
+
+Test Case 3:
+>>> baseG = BaseGeometry()
+>>> baseG.integer_validator('width', 10)
+>>> 
+
+
+Test Case 4:
+>>> baseG = BaseGeometry()
+>>> baseG.integer_validator('width', -1)
+Traceback (most recent call last):
+	...
+    raise ValueError("{:s} must be greater than 0".format(name))
+ValueError: width must be greater than 0
+
+
+
+Test Case 5:
+>>> baseG = BaseGeometry()
+>>> baseG.integer_validator(eddy, 3)
+Traceback (most recent call last):
+	...
+NameError: name 'eddy' is not defined
+>>> 
+
+
+Test Case 6:
+>>> baseG = BaseGeometry()
+>>> baseG.integer_validator('width', 0)
+Traceback (most recent call last):
+	...
+    raise ValueError("{:s} must be greater than 0".format(name))
+ValueError: width must be greater than 0
+>>> 
+
+
+Test Case 7:
+>>> baseG = BaseGeometry()
+>>> baseG.integer_validator('integer', True)
+Traceback (most recent call last):
+	...
+    raise TypeError("{} must be an integer".format(name))
+TypeError: integer must be an integer
+>>> 
+
+
+Test Case 8:
+>>> baseG = BaseGeometry()
+>>> baseG.integer_validator('integer', 2.5)
+Traceback (most recent call last):
+	...
+    raise TypeError("{} must be an integer".format(name))
+TypeError: integer must be an integer
+
+
+Test Case 9:
+>>> baseG = BaseGeometry()
+>>> baseG.integer_validator('integer', '12')
+Traceback (most recent call last):
+	...
+    raise TypeError("{} must be an integer".format(name))
+TypeError: integer must be an integer
+>>> 
+
+
+Test Case 10:
+>>> baseG = BaseGeometry()
+>>> baseG.integer_validator('integer', 12, 10)
+Traceback (most recent call last):
+	...
+TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
+>>> 
+
+
+Test Case 11:
+>>> baseG = BaseGeometry()
+>>> baseG.integer_validator('integer')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+>>> 
+
+
+Test Case 12:
+>>> baseG = BaseGeometry()
+>>> baseG.area(3)
+Traceback (most recent call last):
+	...
+TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
+>>> 
+
+
+Test Case 13:
+>>> baseG = BaseGeometry()
+>>> baseG.integer_validator('integer', (3, 2))
+Traceback (most recent call last):
+	...
+    raise TypeError("{} must be an integer".format(name))
+TypeError: integer must be an integer
+>>> 
+
+Test Case 14:
+>>> baseG.integer_validator('integer', [1, 2, 3])
+Traceback (most recent call last):
+	...
+    raise TypeError("{} must be an integer".format(name))
+TypeError: integer must be an integer
+>>> 
+
+
+Test Case 15:
+>>> baseG = BaseGeometry()
+>>> baseG.integer_validator(name, 12)
+Traceback (most recent call last):
+	...
+NameError: name 'name' is not defined
+>>>
