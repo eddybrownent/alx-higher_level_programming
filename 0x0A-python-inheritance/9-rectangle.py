@@ -1,4 +1,4 @@
-#!/usr/bin/pyrhon3
+#!/usr/bin/python3
 """
 this module contains a class Rectangle
 that inherits BaseGeometry
