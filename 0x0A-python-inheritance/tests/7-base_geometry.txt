@@ -140,3 +140,16 @@ Traceback (most recent call last):
 	...
 NameError: name 'name' is not defined
 >>>
+
+
+Test Case 16:
+>>> BaseGeometry = __import__("7-base_geometry").__doc__
+>>> len(BaseGeometry) > 1
+True
+
+
+Test Case 17:
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry.__doc__
+>>> len(BaseGeometry) > 1
+True
+>>> 
