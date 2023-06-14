@@ -153,3 +153,32 @@ Test Case 17:
 >>> len(BaseGeometry) > 1
 True
 >>> 
+
+
+Test Case 18:
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> baseG = BaseGeometry()
+>>> baseG.integer_validator("age", {3, 4})
+Traceback (most recent call last):
+	...
+    raise TypeError("{} must be an integer".format(name))
+TypeError: age must be an integer
+>>>
+
+
+Test case19:
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> baseG = BaseGeometry()
+>>> baseG.integer_validator("age", None)
+Traceback (most recent call last):
+	...
+    raise TypeError("{} must be an integer".format(name))
+TypeError: age must be an integer
+>>> baseG.integer_validator("age", True)
+Traceback (most recent call last):
+	...
+    raise TypeError("{} must be an integer".format(name))
+TypeError: age must be an integer
+>>> 
+ 
+
