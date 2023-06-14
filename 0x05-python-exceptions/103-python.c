@@ -1,4 +1,4 @@
-#include <python.h>
+#include <Python.h>
 
 void print_python_list(PyObject *p);
 void print_python_bytes(PyObject *p);
@@ -17,11 +17,11 @@ void print_python_list(PyObject *p)
 
 	/* Casting the PyObject to PyListObject and PyVarObject pointers */
 	PyListObject *list_obj = (PyListObject *)p;
-	PyvarObject *var_obj = (PyVarObject *)p;
+	PyVarObject *var_obj = (PyVarObject *)p;
 
 	/* getting the size and allocation values */
 	size = var_obj->ob_size;
-	allocation = list_obj->Allocated;
+	allocation = list_obj->allocated;
 
 	fflush(stdout);
 
@@ -48,7 +48,7 @@ void print_python_list(PyObject *p)
 		if (strcmp(type_name, "bytes") == 0)
 			print_python_bytes(list_obj->ob_item[i]);
 		else if (strcmp(type_name, "float") == 0)
-			print_python_float(list_obj->ob_item[i];
+			print_python_float(list_obj->ob_item[i]);
 	}
 }
 
