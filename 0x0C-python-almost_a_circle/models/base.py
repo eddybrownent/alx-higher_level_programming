@@ -3,6 +3,7 @@
 This module defines a class Base
 """
 import json
+import csv
 
 
 class Base:
@@ -104,5 +105,53 @@ class Base:
                 data = cls.from_json_string(json_data)
                 instances = [cls.create(**atrributes) for atrributes in data]
                 return instances
+        except IOError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Serialize a list of objects to CSV format
+        and save it to a file
+        Args:
+            list_objs (list): A list of instances
+        """
+        with open(cls.__name__ + ".csv", 'w', newline='') as my_file:
+            if list_objs is None or list_objs == []:
+                my_file.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(my_file, fieldnames=fieldnames)
+                for objct in list_objs:
+                    writer.writerow(objct.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Deserializes CSV format from a file
+
+        Returns:
+            If the file does not exist - an empty list.
+            Otherwise - a list of instantiated classes.
+        """
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r", newline="") as my_file:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+
+                dict_reader = csv.DictReader(my_file, fieldnames=fieldnames)
+                parsed_dicts = [dict([key, int(value)]
+                                     for key, value in row.items())
+                                for row in dict_reader]
+
+                return [cls.create(**parsed_dict)
+                        for parsed_dict in parsed_dicts]
+
         except IOError:
             return []
