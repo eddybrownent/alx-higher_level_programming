@@ -1,0 +1,91 @@
+#!/usr/bin/pyton3
+"""
+"""
+import unittest
+from models.base import Base
+from models.rectangle import Rectangle
+
+
+class Test_Rectangle_instantiatio(unittest.TestCase):
+    """
+    """
+    def test_no_arguments(self):
+        with self.assertRaises(TypeError):
+            Rectangle()
+
+    def test_width_getter(self):
+        r = Rectangle(7, 8, 8, 5, 3)
+        self.assertEqual(r.width, 7)
+
+    def test_width_setter(self):
+        r = Rectangle(7, 8, 8, 5, 3)
+        r.width = 19
+        self.assertEqual(r.width, 19)
+
+    def test_height_getter(self):
+        r = Rectangle(7, 8, 8, 5, 3)
+        self.assertEqual(r.height, 8)
+
+    def test_height_setter(self):
+        r = Rectangle(7, 8, 8, 5, 3)
+        r.height = 14
+        self.assertEqual(r.height, 14)
+
+    def test_x_getter(self):
+        r = Rectangle(7, 8, 8, 5, 3)
+        self.assertEqual(r.x, 5)
+
+    def test_x_setter(self):
+        r = Rectangle(7, 8, 8, 5, 3)
+        r.x = 12
+        self.assertEqual(r.x, 12)
+
+    def test_y_getter(self):
+        r = Rectangle(7, 8, 8, 5, 3)
+        self.assertEqual(r.y, 3)
+
+    def test_y_setter(self):
+        r = Rectangle(7, 8, 8, 5, 3)
+        r.y = 9
+        self.assertEqual(r.y, 9)
+
+    def test_private_attribute_width(self):
+        with self.assertRaises(AttributeError):
+            print(Rectangle(7, 8, 8, 5, 3).__width)
+
+    def test_private_attribute_height(self):
+        with self.assertRaises(AttributeError):
+            print(Rectangle(7, 8, 8, 5, 3).height)
+
+    def test_private_attribute_x(self):
+        with self.assertRaises(AttributeError):
+            print(Rectangle(7, 8, 8, 5, 3).__x)
+
+    def test_private_attribute_y(self):
+        with self.assertRaises(AttributeError):
+            print(Rectangle(7, 8, 8, 5, 3).__y)
+
+    def test_with_one_argument(self):
+        with self.assertRaises(TypeError):
+            Rectangle(7)
+
+    def test_with_two_args_sets_unique_ids(self):
+        r1 = Rectangle(6, 4)
+        r2 = Rectangle(4, 6)
+        self.assertEqual(r2.id - 1, r1.id)
+
+    def test_with_three_args_sets_unique_ids(self):
+        r1 = Rectangle(9, 9, 5)
+        r2 = Rectangle(5, 5, 9)
+        self.assertEqual(r2.id - 1, r1.id)
+
+    def test_four_arguments_sets_unique_ids(self):
+        r1 = Rectangle(2, 3, 4, 5 )
+        r2 = Rectangle(4, 4, 3, 2 )
+        self.assertEqual(r2.id - 1, r1.id)
+
+
+
+
+
+
