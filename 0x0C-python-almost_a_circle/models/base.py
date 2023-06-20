@@ -4,6 +4,8 @@ This module defines a class Base
 """
 import json
 import csv
+import turtle
+import time
 
 
 class Base:
@@ -96,6 +98,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """
+        returns a list of instances
         """
         filename = cls.__name__ + ".json"
 
@@ -144,7 +147,6 @@ class Base:
                     fieldnames = ["id", "width", "height", "x", "y"]
                 else:
                     fieldnames = ["id", "size", "x", "y"]
-
                 dict_reader = csv.DictReader(my_file, fieldnames=fieldnames)
                 parsed_dicts = [dict([key, int(value)]
                                      for key, value in row.items())
@@ -155,3 +157,49 @@ class Base:
 
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        opens a window and draws all the Rectangles and Squares
+
+        Args:
+            list_rectangles: all the Rectangles
+            list_squares: all the squares
+        """
+
+        # creating a turtle instance
+        my_turtle = turtle.Turtle()
+        my_turtle.pensize(5)
+        my_turtle.shape("turtle")
+
+        my_turtle.color("black")
+
+        # draw reactangles
+        for rectangle in list_rectangles:
+            my_turtle.showturtle()
+            my_turtle.penup()
+            my_turtle.goto(rectangle.x, rectangle.y)
+            my_turtle.pendown()
+            for i in range(2):
+                my_turtle.forward(rectangle.width)
+                my_turtle.left(90)
+                my_turtle.forward(rectangle.height)
+                my_turtle.left(90)
+
+        my_turtle.color("red")
+
+        # draw squares
+        for square in list_squares:
+            my_turtle.showturtle()
+            my_turtle.penup()
+            my_turtle.goto(square.x, square.y)
+            my_turtle.pendown()
+            for i in range(2):
+                my_turtle.forward(square.width)
+                my_turtle.left(90)
+                my_turtle.forward(square.height)
+                my_turtle.left(90)
+            my_turtle.hideturtle()
+
+        time.sleep(7)
