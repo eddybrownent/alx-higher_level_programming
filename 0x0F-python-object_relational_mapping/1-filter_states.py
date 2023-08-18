@@ -28,7 +28,7 @@ if __name__ == "__main__":
     """
     SQL query to select all states from the table
     """
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' \
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' \
                    ORDER BY states.id ASC")
 
     """
