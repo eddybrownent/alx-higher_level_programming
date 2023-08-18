@@ -3,7 +3,7 @@
 """
 This script lists all states from a MySQL database
 
-Usage : ./0-select_states.py <username> <password> <database>
+Usage : ./2-my_filter_states.py <username> <password> <database>
 <state name searched>
 """
 import sys
@@ -13,6 +13,7 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
+    statename = sys.argv[4]
 
     """
     making a connection to the MySQL server
@@ -28,7 +29,8 @@ if __name__ == "__main__":
     """
     SQL query to select all states from the table
     """
-    cursor.execute("SELECT * FROM states WHERE name ='{}'".format(sys.argv[4]))
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' \
+            ORDER BY states.id ASC".format(statename))
 
     """
     fetching all the results
