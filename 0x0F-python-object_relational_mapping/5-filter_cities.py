@@ -3,7 +3,8 @@
 """
 This script lists all cities and their states from MySQL database
 
-Usage : ./4-cities_by_state.py <username> <password> <database>
+Usage : ./5-filters_cities.py <username> <password> <database>
+<state name>
 """
 import sys
 import MySQLdb
@@ -28,9 +29,9 @@ if __name__ == "__main__":
     """
     SQL query to select all cities from the table
     """
-    sql = """SELECT cities.name FROM cities \
+    sql = """SELECT cities.id, cities.name FROM cities \
             INNER JOIN states ON cities.state_id = states.id \
-            WHERE states.name = %s \
+            WHERE states.name LIKE BINARY %s \
             ORDER BY cities.id ASC"""
 
     cursor.execute(sql, (state_name,))
@@ -41,7 +42,12 @@ if __name__ == "__main__":
     myresult = cursor.fetchall()
 
     """
-    Printing the results
+    Check if rows_selected contains any data
     """
-    for row in myresult:
-        print(row)
+    if myresult is not None:
+        # Create a list of values from the second column for each row
+        val_sec_column = [row[1] for row in myresult]
+        # Join the values with a comma and a space
+        comma_values = ", ".join(val_sec_column)
+        # Print the comma-separated values
+        print(comma_values)
