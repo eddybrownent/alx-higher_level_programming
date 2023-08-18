@@ -4,7 +4,7 @@
 This script lists all states from a MySQL database
 with a name starting with N (upper N) from the database
 
-Usage : ./0-select_states.py <username> <password> <database>
+Usage : ./1-filter_states.py <username> <password> <database>
 """
 import sys
 import MySQLdb
