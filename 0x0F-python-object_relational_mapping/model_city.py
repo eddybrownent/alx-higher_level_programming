@@ -1,4 +1,4 @@
-#!/usr/bin/pyhon3
+#!/usr/bin/python3
 """
 This script defines a City class for
 SQALchemy ORM
