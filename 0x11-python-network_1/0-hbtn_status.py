@@ -12,10 +12,10 @@ if __name__ == "__main__":
         print("Body response:")
 
         """ print the type of the contents """
-        print("     - type: {}".format(type(content)))
+        print("\t- type: {}".format(type(content)))
 
         """ print the content of the response """
-        print("     - content: {}".format(content))
+        print("\t- content: {}".format(content))
 
         """ decodes the content "UTF-8" and print it """
-        print("     - utf8 content: {}".format(content.decode("utf-8")))
+        print("\t- utf8 content: {}".format(content.decode("utf-8")))
