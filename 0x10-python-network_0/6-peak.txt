@@ -1,2 +1,1 @@
-# Most efficient way to find a peak in an unsorted list of integers
-O(n)
+O(log(n))
