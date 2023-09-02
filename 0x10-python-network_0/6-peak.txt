@@ -1,2 +1,2 @@
-# This is time complexity of the algorithm finding a peak in a list of unsorted integers
+O(n)
 O(log(n))
