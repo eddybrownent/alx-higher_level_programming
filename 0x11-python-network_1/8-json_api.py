@@ -12,9 +12,8 @@ if __name__ == "__main__":
     else:
         payload = {'q': sys.argv[1]}
     response = requests.post('http://0.0.0.0:5000/search_user', data=payload)
-    parsed = response.json()
-
     try:
+        parsed = response.json()
         if parsed == {}:
             print("No result")
         else:
