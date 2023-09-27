@@ -1,0 +1,64 @@
+How to use and test 4-print_square.py module
+
+Impoting:
+
+>>> print_square = __import__('4-print_square').print_square
+
+
+Testing without arguments:
+
+>>> print_square()
+Traceback (most recent call last):
+  	...
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+Testing with two integers:
+
+>>> print_square(1, 2)
+Traceback (most recent call last):
+  	...
+TypeError: print_square() takes 1 positional argument but 2 were given
+
+
+Testing with one int:
+
+>>> print_square(4)
+####
+####
+####
+####
+
+Testing with 0:
+
+>>> print_square(0)
+>>> 
+
+
+Testing with string:
+
+>>> print_square('4')
+Traceback (most recent call last):
+  	...
+    raise TypeError('size must be an integer')
+TypeError: size must be an integer
+
+Testing with a negative integer:
+>>> print_square(-4)
+Traceback (most recent call last):
+	...
+    raise ValueError('size must be >= 0')
+ValueError: size must be >= 0
+
+Testing with a float:
+>> print_square(1.4)
+Traceback (most recent call last):
+	...
+    raise TypeError('size must be an integer')
+TypeError: size must be an integer
+
+Testing with a float less than zero:
+>>> print_square(0.4)
+Traceback (most recent call last):
+	...
+    raise TypeError('size must be an integer')
+TypeError: size must be an integer

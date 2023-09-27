@@ -1,0 +1,3 @@
+At Holberton School,
+Python is really important,
+"C is fun!"
